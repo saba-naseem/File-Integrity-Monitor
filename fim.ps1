@@ -1,4 +1,4 @@
-﻿# Function that returns the hash value of the file
+# Function that returns the hash value of the file
 Function Calculate-File-Hash($filepath)
 {
     $filehash = Get-FileHash -Path $filepath -Algorithm SHA512
@@ -77,7 +77,7 @@ elseif ($response -eq "B".ToUpper()) {
         # Collect all files in the target folder
         $files = Collect-all-files
 
-        # For each file, calculate the hash, and notify if a new file has been created, file has been changed or file has been compromised
+        # For each file, calculate the hash, and notify if a new file has been created or if file has been changed
         foreach ($f in $files)
         {
             $hash = Calculate-File-Hash $f.FullName
